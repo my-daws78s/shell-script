@@ -1,0 +1,1 @@
+echo "My first hello-world script."
