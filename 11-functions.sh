@@ -1,4 +1,4 @@
-
+#!bin/bash
 check=$(id -u)
 
 if [ $check -ne 0 ]
