@@ -1,5 +1,3 @@
-#!bin/bash
-
 #Adding colors to output messages:
 
 CHECKUID=$(id -u)
