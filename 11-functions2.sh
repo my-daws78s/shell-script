@@ -21,6 +21,7 @@ VALIDATE(){
         echo "$2..... Failure!"
     else
         echo "$2..... Success!"
+    fi
 }
 
 dnf install git -y &>> $LOGFILE
