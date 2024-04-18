@@ -11,10 +11,13 @@ else
 fi
 
 Validate(){
-    echo "exit status: $1"
-    echo "git installation"
+    if [ $? -ne 0 ]
+    then
+        echo "$2....Failure"
+    else
+        echo "$2....Success"
+    fi
 }
-
     dnf install git -y
     Validate $? "Installation of git"
 
