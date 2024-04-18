@@ -16,5 +16,5 @@ Validate(){
 }
 
     dnf install git -y
-    validate $? "Installation of git"
+    Validate $? "Installation of git"
     
