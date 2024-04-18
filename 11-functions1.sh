@@ -18,7 +18,7 @@ Validate(){
         echo "$2....Success"
     fi
 }
-    dnf install git -y
+    dnf sinstall git -y
     Validate $? "Installation of git"
 
 
