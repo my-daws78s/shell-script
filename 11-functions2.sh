@@ -13,7 +13,7 @@ fi
 
 DATE=$(date +%F-%H-%M-%S)
 FILENAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=/tmp/$FILENAME_$DATE.log
+LOGFILE=/tmp/$FILENAME-$DATE.log
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -25,4 +25,4 @@ VALIDATE(){
 }
 
 dnf install git -y &>> $LOGFILE
-VALIDATE $? "Installtion of GIT IS ::"
+VALIDATE $? "Installtion of GIT Is ::"
