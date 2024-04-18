@@ -1,3 +1,4 @@
+
 check=$(id -u)
 
 if [ $check -ne 0 ]
@@ -5,15 +6,15 @@ then
     echo "its a failure and hence exiting here.."
     exit 68
 else
-    echo "its a success message"
+    echo "I am a root user.."
 fi
 
-    dnf install mysqll -y
+    dnf install git -y
     
     if [ $? -ne 0 ]
     then
-        echo "Failed to install mysql.."
+        echo "Failed to install git.."
         exit 10
     else
-        echo "mysql installation went successful..."
+        echo "git installation went successful..."
     fi
