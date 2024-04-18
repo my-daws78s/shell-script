@@ -1,4 +1,5 @@
 #!bin/bash
+
 check=$(id -u)
 
 if [ $check -ne 0 ]
@@ -9,12 +10,11 @@ else
     echo "I am a root user.."
 fi
 
+Validate(){
+    echo "exit status: $1"
+    echo "git installation"
+}
+
     dnf install git -y
+    validate $? "Installation of git"
     
-    if [ $? -ne 0 ]
-    then
-        echo "Failed to install git.."
-        exit 10
-    else
-        echo "git installation went successful..."
-    fi
