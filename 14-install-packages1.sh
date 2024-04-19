@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID $(id -u)
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then
@@ -23,4 +23,5 @@ do
         echo "Package $i is already installed.... SKIPPING"
     else
         echo "Package $i is to be installed."
+    fi
 done
