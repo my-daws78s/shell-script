@@ -10,6 +10,14 @@ else
     echo "You are a root user."
 fi
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+        echo -e "$2 .... $R Failure $N"
+    then
+        echo "$2 .... $G Success $N"
+
+}
+
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIP_NAME-$TIMESTAMP.log
@@ -30,6 +38,8 @@ do
         echo -e "Package $i is already installed.... $Y SKIPPING $N"
     else
         echo -e "$R Package $i is not installed yet.... $N"
+        dnf install $i &>>$LOGFILE
+        VALIDATE $? "Installation of $i"
     fi
 done
 
