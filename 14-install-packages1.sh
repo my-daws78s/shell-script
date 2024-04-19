@@ -33,7 +33,7 @@ echo -e "$B Script Start time: $TIMESTAMP $N"
 for i in $@
 do
     echo "Package to install: $i"
-    dnf list installed $i &>>$LOGFILE
+    dnf list installed $i -y &>>$LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "Package $i is already installed.... $Y SKIPPING $N"
