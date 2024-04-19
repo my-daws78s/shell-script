@@ -33,13 +33,13 @@ echo -e "$B Script Start time: $TIMESTAMP $N"
 for i in $@
 do
     echo "Package to install: $i"
-    dnf list installed $i -y &>>$LOGFILE
+    dnf list installed $i &>>$LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "Package $i is already installed.... $Y SKIPPING $N"
     else
         echo -e "$R Package $i is not installed yet.... $N"
-        dnf install $i &>>$LOGFILE
+        dnf install $i -y &>>$LOGFILE
         VALIDATE $? "Installation of $i"
     fi
 done
