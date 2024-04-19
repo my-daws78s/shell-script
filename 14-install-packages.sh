@@ -10,3 +10,11 @@ else
 fi
 
 echo "All Packages: $@"
+
+#Now lets loop it
+for i in $@
+do
+    echo "Package to install: $i"
+done
+
+#Different packages are like: mysql gcc chrony fail2ban postgis2_94
