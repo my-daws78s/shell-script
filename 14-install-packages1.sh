@@ -15,7 +15,7 @@ VALIDATE(){
         echo -e "$2 .... $R Failure $N"
     then
         echo "$2 .... $G Success $N"
-
+    fi
 }
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
