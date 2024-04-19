@@ -12,7 +12,7 @@ fi
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
+LOGFILE=/tmp/$SCRIP_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -24,7 +24,7 @@ echo -e "$B Script Start time: $TIMESTAMP $N"
 for i in $@
 do
     echo "Package to install: $i"
-    dnf installed $i &>>$LOGFILE
+    dnf list installed $i &>>$LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "Package $i is already installed.... $Y SKIPPING $N"
