@@ -12,15 +12,16 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]
-        echo -e "$2 .... $R Failure $N"
     then
-        echo "$2 .... $G Success $N"
+        echo -e "$2 .... $R Failure $N"
+    else
+        echo -e "$2 .... $G Success $N"
     fi
 }
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=/tmp/$SCRIP_NAME-$TIMESTAMP.log
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
