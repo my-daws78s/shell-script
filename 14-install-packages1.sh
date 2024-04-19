@@ -16,7 +16,10 @@ LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+B="\e[34m"
 N="\e[0m"
+
+echo -e "$B Script Start time: $TIMESTAMP $N"
 
 for i in $@
 do
@@ -29,3 +32,5 @@ do
         echo -e "$R Package $i is not installed yet.... $N"
     fi
 done
+
+echo -e "$B Script End time: $TIMESTAMP $N"
