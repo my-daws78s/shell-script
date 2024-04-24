@@ -14,7 +14,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log")
 echo "Files to delete are listed here: $FILES"
 
-while IFS = read -r line
+while IFS= read -r line
 do
     echo "Deleting File: $line"
     #rm -fr $line
