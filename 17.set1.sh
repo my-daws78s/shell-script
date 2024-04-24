@@ -4,8 +4,10 @@ set -e
 
 #trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
-failure $1: $2
 
+failure(){
+    echo "Failed at Line $1 and command is $2"
+}
 
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%F-%H-%M-%S)
@@ -21,7 +23,6 @@ else
 fi
 
 dnf install mysql-serversss -y &>>$LOGFILE
-handleError 
 dnf install gitsss &>>$LOGFILE
 
 
