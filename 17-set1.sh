@@ -26,4 +26,10 @@ dnf install mysql-serversss -y &>>$LOGFILE
 dnf install gitsss &>>$LOGFILE
 
 
-#using set -e will just throw error and stop the script whereever the error occurs..but does not show line number
+#using trap command ensure lineno and command name are thrown
+
+#Output is:
+
+# I am a root user.
+# Failed at Line: 25 and
+# command is: dnf install mysql-serversss -y &>> $LOGFILE
