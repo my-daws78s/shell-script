@@ -15,7 +15,7 @@ else
     echo "I am a root user."
 fi
 
-dnf install mysql-server -y &>>$LOGFILE
+dnf install mysql-serversss -y &>>$LOGFILE
 dnf install gitsss &>>$LOGFILE
 
-#using set -e will just throw error and stop the script whereever the error occurs..
+#using set -e will just throw error and stop the script whereever the error occurs..but does not show line number
