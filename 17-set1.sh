@@ -6,7 +6,7 @@ set -e
 trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
 failure(){
-    echo "Failed at Line: $1 \n and command is: $2"
+    echo -e "Failed at Line: $1 and '\n' command is: $2"
 }
 
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
