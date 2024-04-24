@@ -11,5 +11,5 @@ else
     exit 1
 fi
 
-FILES=find $SOURCE_DIR -name "*.log"
+FILES=$(find $SOURCE_DIR -name "*.log")
 echo "Files to delete are listed here: $FILES"
