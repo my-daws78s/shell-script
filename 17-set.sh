@@ -16,6 +16,6 @@ else
 fi
 
 dnf install mysql-server -y &>>$LOGFILE
-dnf install git &>>$LOGFILE
+dnf install gitsss &>>$LOGFILE
 
 #using set -e will just throw error and stop the script whereever the error occurs..
