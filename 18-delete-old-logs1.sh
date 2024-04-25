@@ -14,8 +14,15 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime -5)
 echo "Files to delete are listed here: $FILES"
 
-while IFS= read -r line
+# while IFS= read -r line
+# do
+#     echo "Deleting File: $line"
+#     rm -fr $line
+# done <<< $FILES
+
+#test the below code:
+for i in {$FILES}
 do
-    echo "Deleting File: $line"
-    rm -fr $line
-done <<< $FILES
+    echo "Deleting File using for loop: $i" 
+    rm -fr $i
+done
