@@ -2,14 +2,17 @@
 
 DISK_USAGE=$(df -hT | grep "ntfs")
 THRESHOLD=75
+MESSAGE=""
 
 while IFS= read -r line
 do
-    USAGE=$(df -hT | grep "ntfs" | awk -F " " '{print $7F}' | cut -d "%" -f1)"
-    DIRECTORY=$(df -hT | grep "ntfs" | awk -F " " '{print $NF}')
+    USAGE=$(echo $line | awk -F " " '{print $7F}' | cut -d "%" -f1)"
+    DIRECTORY=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $THRESHOLD ]
     then
-        echo "Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
+        #echo "$FOLDER is more than $THRESHOLD, Current usage: $USAGE \n"
+        MESSAGE="Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
     fi
-done
+done <<< $DISK_USAGE
 
+echo -e "Message: $MESSAGE"
