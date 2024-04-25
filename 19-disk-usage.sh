@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep "ntfs")
-THRESHOLD=75
+THRESHOLD=5
 MESSAGE=""
 
 while IFS= read -r line
