@@ -21,7 +21,7 @@ echo "Files to delete are listed here: $FILES"
 # done <<< $FILES
 
 #test the below code: seems while is best for reading each line... dont find a way to handle in for loop...
-for i in {$FILES}
+for i in $FILES
 do
     echo -e "Deleting File using for loop: $i" 
     #echo "Deleting File using for loop1: $FILES" 
