@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISK_USAGE=$(df -hT | grep "ntfs")
+DISK_USAGE=$(df -hT | grep xfs)
 THRESHOLD=5
 MESSAGE=""
 
