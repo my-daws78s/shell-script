@@ -24,5 +24,5 @@ echo "Files to delete are listed here: $FILES"
 for i in {$FILES}
 do
     echo "Deleting File using for loop: $i" 
-    #rm -fr $i
+    rm -fr $i
 done
