@@ -6,12 +6,12 @@ MESSAGE=""
 
 while IFS= read -r line
 do
-    USAGE=$(echo $line | awk -F " " '{print $7F}' | cut -d "%" -f1)"
+    USAGE=$(echo $line | awk -F " " '{print $7F}' | cut -d "%" -f1)
     DIRECTORY=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $THRESHOLD ]
     then
         #echo "$FOLDER is more than $THRESHOLD, Current usage: $USAGE \n"
-        MESSAGE+="Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
+        MESSAGE="Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
     fi
 done <<< $DISK_USAGE
 
