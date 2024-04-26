@@ -11,7 +11,7 @@ do
     if [ $USAGE -ge $THRESHOLD ]
     then
         #echo "$FOLDER is more than $THRESHOLD, Current usage: $USAGE \n"
-        MESSAGE="Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
+        MESSAGE+="Usage of $DIRECTORY is: $USAGE, it has crossed the threshold limit: $THRESHOLD."
     fi
 done <<< $DISK_USAGE
 
